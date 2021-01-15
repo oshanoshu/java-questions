@@ -1,18 +1,21 @@
 <div align="center">
   <img height="60" src="java.png">
   <h1>Java Questions</h1>
+  
 ---
+
 <span>
 I will post Java questions from basic to advanced, and may be it'll help you check your knowledge, get prepared for interviews, or whatever you want to use these for. I hope you have fun. </br>
 I'll try to update these regularly.
 </span>
 
-Feel free to reach out to me! 😊 <br />
+Feel free to reach out to me! <br />
 <a href="https://www.instagram.com/oshanoshu"><img height="30" src="instagram.png"></a> <a href="https://www.twitter.com/oshanoshu"><img height="30" src="twitter.png"></a> <a href="https://www.linkedin.com/in/oshanoshu"><img height="30" src="linkedin.png"></a>
-</div>
 
 | You are free to use these questions in your project! But, I would really appreciate it if you mention this repo.|
 |---|
+
+</div>
 
 ---
 
