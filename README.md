@@ -154,7 +154,7 @@ So, when you initialize the integer value with character literal, type casting i
 
 ---
 
-###### 4. What's the output?
+###### 5. What's the output?
 
 ```java
 public class LoopOperations {
