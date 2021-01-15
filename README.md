@@ -8,10 +8,10 @@
 I will post Java questions from basic to advanced, and may be it'll help you check your knowledge, get prepared for interviews, or whatever you want to use these for. I hope you have fun. </br>
 I'll try to update these regularly.  
 </span>
-Feel free to reach out to me! <br />
+Feel free to contact me! <br />
 <a href="https://www.instagram.com/oshanoshu"><img height="30" src="instagram.png"></a> <a href="https://www.twitter.com/oshanoshu"><img height="30" src="twitter.png"></a> <a href="https://www.linkedin.com/in/oshanoshu"><img height="30" src="linkedin.png"></a>
 
-| You are free to use these questions in your project! But, I would really appreciate it, if you mention this repo.|
+| You are free to use these questions in your project! But, I would really appreciate it, if you mention this repo. You can also find this in my [website](https://oshanoshu.github.io).|
 |---|
 
 </div>
@@ -148,6 +148,47 @@ The ascending order of primitive data types is:
 `byte` >> `char` >> `short` >> `int` >> `long` >> `float` >> `double`  
 So, when you initialize the integer value with character literal, type casting is automatically done, and the character literal is converted to integer.  
 **REMEMBER**: When you are converting character literal to integer, you convert it into ASCII value. And, the ASCII value of '4' is 52. Hence, the answer is 52, not 4.
+
+</p>
+</details>
+
+---
+
+###### 4. What's the output?
+
+```java
+public class LoopOperations {
+    public static void main(String[] args) {
+        for(int i = 0; i < 6; i++)
+        {
+            if(i == 1)
+                continue;
+            
+            if(i == 4)
+                break;
+                
+            System.out.print(i+" ");
+        }
+    }
+}
+```
+
+- A: `0 1 2 3`
+- B: `0 2 3 4`
+- C: `'0 2 3 5'`
+- D: `0 2 3`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: D
+
+| `break`     | `continue` |
+| ----------- | ----------- |
+| `break` statement terminates the loop at the moment it's executed.      | `continue` statement skips the current iteration after it's executed.|
+| You can use it with `switch` statement.   | You can only use it in loops: `for`, `while`, `do-while`.|
+
+Now, in our question since there is a `continue` statement when `i == 1`, it skips that loop. So, 1 is not printed. There is a `break` statement when `i == 4`, and that is where the loop terminates. So, it doesn't print anything after 4 (including 4).
 
 </p>
 </details>
