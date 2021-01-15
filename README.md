@@ -175,7 +175,7 @@ public class LoopOperations {
 
 - A: `0 1 2 3`
 - B: `0 2 3 4`
-- C: `'0 2 3 5'`
+- C: `0 2 3 5`
 - D: `0 2 3`
 
 <details><summary><b>Answer</b></summary>
