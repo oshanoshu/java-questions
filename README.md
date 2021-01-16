@@ -282,4 +282,92 @@ Since the exception is handled, the program successfully executes. Hence, when y
 
 ---
 
+###### 8. What's the output?
+
+```java
+public class TryCatchOperations {
+    public static void main(String[] args) {
+        int a = 5;
+        try{
+            a = a/0;
+            System.out.print("We are in a try block ");
+        }
+        catch (Exception e1)
+        {
+            try
+            {
+                a = a/5;
+                System.out.print("We are in a nested try block ");
+            }
+            catch (Exception e2)
+            {
+                System.out.print("We are in a nested catch block ");
+            }
+            
+            System.out.print(a);
+        }
+    }
+}
+```
+
+- A: `We are in a nested try block ` and `We are in a nested catch block` and `5`
+- B: `We are in a nested catch block` and `1`
+- C: `1`
+- D: `We are in a nested try block ` and `5`
+- E: `We are in a nested try block ` and `1`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: E
+
+`try-catch` block can be nested. In the first try block, ArithmeticException arises which is caught by `catch` block. At this point the value of `a` is still `5` as the arithmetic operation in first `try` block didn't go through. Then, we divide the current value of `a` by `5` and assign it to `a` which is perfectly okay as there is no exception this time and program continues with remainder of `try-block` statements and skips the `catch` block. So, the only print statements executed are from the nested `try` block and the last print statement from `catch` block. Since, we have changed the value of `a` to `1` using division. The answer is E.
+
+</p>
+</details>
+
+---
+
+###### 9. What's the output?
+
+```java
+public class TryCatchOperations {
+    public static void main(String[] args) {
+        int a = 5;
+        try{
+            a = a/0;
+            System.out.print("We are in a try block ");
+        }
+        catch (Exception e1)
+        {
+            System.out.print("We are in a catch block ");
+        }
+        finally
+        {
+            System.out.print("We are in a finally block ");
+        }
+
+    }
+}
+```
+
+- A: `We are in a try block ` and `We are in a catch block `
+- B: `We are in a try block ` and `We are in a finally block `
+- C: `We are in a catch block ` and `We are in a finally block `
+- D: `We are in a nested catch block `
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+`finally` block is always executed irrespective of the exception raised. It executes after the `try-catch` block.
+From [Oracle Documentation](https://docs.oracle.com/javase/tutorial/essential/exceptions/finally.html):     
+> Note: If the JVM exits while the try or catch code is being executed, then the finally block may not execute. Likewise, if the thread executing the try or catch code is interrupted or killed, the finally block may not execute even though the application as a whole continues. 
+
+</p>
+</details>
+
+---
+
 Influenced by the [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
