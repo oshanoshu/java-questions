@@ -195,4 +195,91 @@ Now, in our question since there is a `continue` statement when `i == 1`, it ski
 
 ---
 
+###### 6. What's the output?
+
+```java
+public class LoopOperations {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = a/0;
+        
+        System.out.println(b);
+    }
+}
+```
+
+- A: Program fails during compilation
+- B: Program fails during execution
+- C: `5`
+- D: `infinity`
+
+<details><summary><b>Hint</b></summary>
+<p>
+
+Broadly speaking, there are two types of Exception:
+1. Checked Exception
+2. Unchecked Exception 
+
+| Checked Exceptions | Unchecked Exceptions |  
+| ------------------ | -------------------- |  
+| These types of exceptions are checked by compiler during compilation process. | These types of exceptions are not checked during compilation process. |  
+| Compiler mandates programmer to handle these exceptions either by using `try-catch` blocks or using `throws`.  | It's upto the program to handle these exceptions as they aren't checked by compiler. These generally occur due to programming errors. |  
+| Examples: ClassNotFoundException, IOException. | Examples: ArithmeticException, NullPointerException. |
+
+</p>
+</details>
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+Since dividing an `integer` by `zero` is a programming error, it's not checked by compiler, and it throws ArithmeticException during execution.  
+**What if ArithmeticException was CheckedException?**  
+Then, the programmar would be mandated to write `try-catch` blocks or `throws` for every arithmetic operations in Java which would not be suitable as these exceptions are caused only on few extreme conditions. 
+
+</p>
+</details>
+
+---
+
+###### 7. What's the output?
+
+```java
+public class TryCatchOperations {
+    public static void main(String[] args) {
+        int a = 5;
+        try{
+            a = a/0;
+            System.out.print("We are in a try block ");
+        }
+        catch(Exception e)
+        {
+            System.out.print("We are in a catch block ");
+        }
+
+        System.out.print(a);
+    }
+}
+```
+
+- A: `We are in a try block ` and `We are in a catch block` and `5`
+- B: `We are in a catch block` and `5`
+- C: `5`
+- D: `We are in a try block ` and `5`
+- E: None of the above
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+`try-catch` block is one of the ways to handle exceptions in Java. Whenever an exception occurs inside `try` block, it is caught by `catch` block. Any statements on `try` block after the exception is encountered isn't executed, and the program resumes in the `catch` block and the statements in the `catch` block are executed. Therefore, the print statement inside `catch` is executed.
+Since the exception is handled, the program successfully executes. Hence, when you reach the final print statement, `5` is printed as it's the only successful assisgnment of the value that worked. The other one was handled by `try-catch` block.
+
+</p>
+</details>
+
+---
+
 Influenced by the [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
