@@ -370,4 +370,51 @@ From [Oracle Documentation](https://docs.oracle.com/javase/tutorial/essential/ex
 
 ---
 
+###### 10. Interface can be declared as private.
+
+- A: `True`
+- B: `False`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+In Java, `Interface` is like a contract. It only consists of abstract methods and constants declaration. Interfaces can't be instantiated. The only way interfaces are executed in Java is when a class implements it. And, it does mean that the class needs to execute all the behaviors stated by the interface. So, if you declare `interface` as private, it means it can't be used by any other classes, and it contradicts the sole purpose of interface.    
+Classes in Java can implement multiple interfaces. Multiple inheritance in Java is possible only using interfaces.   
+**Why doesn't Java have Multiple Inheritance with classes?**  
+Let's see what happens if Java allowed Multiple Inheritance.
+```java
+class A
+{
+  public void printMethod()
+  {
+    System.out.println("This is from Class A");
+  }
+}
+
+class B
+{
+  public void printMethod()
+  {
+    System.out.println("This is from Class B");
+  }
+}
+
+class C extends A, B
+{
+  public static void main(String args[])
+  {
+    C c = new C();
+    c.printMethod();
+  }
+}
+```
+Now, we can see that `printMethod()` in class C will not know which `printMethod()` (From class A or class B) should it execute. To avoid these name conflicts and ambiguity, Multiple Inheritance (with classes) is not allowed in Java.
+</p>
+</details>
+
+---
+
+
 Influenced by the [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
