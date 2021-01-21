@@ -417,4 +417,4 @@ Now, we can see that `printMethod()` in class C will not know which `printMethod
 ---
 
 
-Influenced by the [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
+Influenced by [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
