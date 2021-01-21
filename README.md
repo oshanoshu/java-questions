@@ -416,5 +416,36 @@ Now, we can see that `printMethod()` in class C will not know which `printMethod
 
 ---
 
+###### 11. What is the output?
+
+```java
+public class questions {
+
+    private int number = 5;
+    
+    public static void main(String[] args) {
+        number++;
+        System.out.println(number);
+    }
+}
+```
+
+- A: Program doesn't compile
+- B: `5`
+- C: `6`
+- D: None of the above
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: A
+
+Program doesn't compile with an error `Cannot make a static reference to the non-static field number`.
+You cannot make reference to the non-static member from the static method. Static members are the properties of class wheras non-static members are the properties of object. Each object has it's own copy of non-static members whereas every object shares the same static members. On the other hand, you can make reference to static members from non-static method.
+
+</p>
+</details>
+
+---
 
 Influenced by [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
