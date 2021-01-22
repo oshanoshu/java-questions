@@ -583,4 +583,24 @@ public class ThreadsOperations{
 
 ---
 
+15. Which of the following is not a primitive data type in Java?
+
+- A: `short`
+- B: `byte`
+- C: `boolean`
+- D: `String` 
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: D  
+
+There are 8 primitive data types in Java: `byte`, `char`, `short`, `int`, `long`, `float`, `double`, `boolean`.  
+Primitive data types are the simplest form of data types, and they can't be broken down into other simpler forms. In Java, `String` is an object.
+
+</p>
+</details>
+
+---
+
 Influenced by [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
