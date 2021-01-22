@@ -18,7 +18,27 @@ Feel free to contact me! <br />
 
 ---
 
-###### 1. What's the output?
+###### 1. Which of the following is not a primitive data type in Java?
+
+- A: `short`
+- B: `byte`
+- C: `boolean`
+- D: `String` 
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: D  
+
+There are 8 primitive data types in Java: `byte`, `char`, `short`, `int`, `long`, `float`, `double`, `boolean`.  
+Primitive data types are the simplest form of data types, and they can't be broken down into other simpler forms. In Java, `String` is an object.
+
+</p>
+</details>
+
+---
+
+###### 2. What's the output?
 
 ```java
 public class IntegerOperations {
@@ -52,7 +72,7 @@ When you declare a variable with the same name twice, this type of error is caug
 
 ---
 
-###### 2. What's the output?
+###### 3. What's the output?
 
 ```java
 public class StringOperations {
@@ -86,7 +106,7 @@ And, when you are comparing two objects using `==` operator (also known as Refer
 
 ---
 
-###### 3. What's the output?
+###### 4. What's the output?
 
 ```java
 public class StringOperations {
@@ -120,7 +140,7 @@ However, it's important to remember that String class in Java overrides the defa
 
 ---
 
-###### 4. What's the output?
+###### 5. What's the output?
 
 ```java
 public class IntegerOperations {
@@ -154,7 +174,7 @@ So, when you initialize the integer value with character literal, type casting i
 
 ---
 
-###### 5. What's the output?
+###### 6. What's the output?
 
 ```java
 public class LoopOperations {
@@ -195,7 +215,7 @@ Now, in our question since there is a `continue` statement when `i == 1`, it ski
 
 ---
 
-###### 6. What's the output?
+###### 7. What's the output?
 
 ```java
 public class LoopOperations {
@@ -243,7 +263,7 @@ Then, the programmar would be mandated to write `try-catch` blocks or `throws` f
 
 ---
 
-###### 7. What's the output?
+###### 8. What's the output?
 
 ```java
 public class TryCatchOperations {
@@ -282,7 +302,7 @@ Since the exception is handled, the program successfully executes. Hence, when y
 
 ---
 
-###### 8. What's the output?
+###### 9. What's the output?
 
 ```java
 public class TryCatchOperations {
@@ -328,7 +348,7 @@ public class TryCatchOperations {
 
 ---
 
-###### 9. What's the output?
+###### 10. What's the output?
 
 ```java
 public class TryCatchOperations {
@@ -370,7 +390,7 @@ From [Oracle Documentation](https://docs.oracle.com/javase/tutorial/essential/ex
 
 ---
 
-###### 10. Interface can be declared as private.
+###### 11. Interface can be declared as private.
 
 - A: `True`
 - B: `False`
@@ -416,7 +436,97 @@ Now, we can see that `printMethod()` in class C will not know which `printMethod
 
 ---
 
-###### 11. What is the output?
+###### 12. Will the following program compile?
+
+```java
+interface A {
+    public void print();
+}
+
+class B {
+
+    B()
+    {
+        System.out.println("I am from class B");
+    }
+}
+
+
+class C extends B implements A{
+    public static void main (String args[])
+    {
+        System.out.println("Life is beautiful");
+    }
+}
+```
+
+- A: `Yes`
+- B: `No`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+No, the program won't compile. It's because *class C* implements *interface A*, but it doesn't implement the inherited abstract method `A.print()`.   
+Whenever any class implements the interface, it needs to provide implementation for all the inherited methods from the interface.  
+This would have been correct.   
+```java
+class C extends B implements A{
+  public void print()
+  {
+     //do something
+  }
+  
+  //Rest of the code
+}
+```
+
+</p>
+</details>
+
+---
+
+###### 13. Will the following program compile?
+
+```java
+class Animals {
+
+    String name;
+    public Animals(String name)
+    {
+        this.name = name;
+    } 
+
+    public abstract void printName();
+
+}
+```
+
+- A: `Yes`
+- B: `No`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B
+
+No, the program won't compile. It's because *class Animals* has abstract method `printName()`. Only abstract classes or interfaces can have abstract methods. If you want your class to have both non-abstract and abstract methods, you should declare your class as abstract using `abstract` keyword before class. 
+*Abstract classes* can be extended by other classes, but the derived class must have their implementation of abstract methods.   
+
+| Abstract Class | Interface |  
+| ------------------ | -------------------- |  
+| Has both abstract and non-abstract methods. | All methods are implicitly abstract. |  
+| Can have constructor which can be invoked by child class. | Can't have constructor. |  
+| Child class doesn't need to provide implementation of all the methods. | Classes implementing interface must provide implementation for all the methods. |
+| In Java, class can only extend one abstract class. | In Java, class can implements many interfaces. |
+| Abstract class can extend other class or implement interfaces. | Interface can only extend other interfaces. |
+
+</p>
+</details>
+
+---
+###### 14. What is the output?
 
 ```java
 public class Modifiers {
@@ -448,7 +558,7 @@ You cannot make reference to the non-static member from the static method. Stati
 
 ---
 
-###### 12. What is the output?
+###### 15. What is the output?
 
 ```java
 public class Initializers {
@@ -498,7 +608,7 @@ public class Initializers {
 
 ---
 
-13. What is the output?
+###### 16. What is the output?
 
 ```java
 public class ThreadsOperations{
@@ -546,7 +656,7 @@ Threads can be created by extending Thread class or by implementing Runnable int
 
 ---
 
-14. How many times will the print statement be executed?
+###### 17. How many times will the print statement be executed?
 
 ```java
 public class ThreadsOperations{
@@ -577,26 +687,6 @@ public class ThreadsOperations{
 #### Answer: B  
 
 **Threads** in java can only be started once. The program will throw an `IllegalThreadStateException` during runtime if we try to start a thread that has already been started. So, the print statement is only executed once. 
-
-</p>
-</details>
-
----
-
-15. Which of the following is not a primitive data type in Java?
-
-- A: `short`
-- B: `byte`
-- C: `boolean`
-- D: `String` 
-
-<details><summary><b>Answer</b></summary>
-<p>
-
-#### Answer: D  
-
-There are 8 primitive data types in Java: `byte`, `char`, `short`, `int`, `long`, `float`, `double`, `boolean`.  
-Primitive data types are the simplest form of data types, and they can't be broken down into other simpler forms. In Java, `String` is an object.
 
 </p>
 </details>
