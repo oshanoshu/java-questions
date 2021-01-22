@@ -498,4 +498,51 @@ public class Initializers {
 
 ---
 
+13. What is the output?
+
+```java
+public class ThreadsOperations{
+  
+    public static int number = 0;
+  
+    public static void main(String[] args) {
+
+      Thread thread = new Thread()
+      {
+          public void run()
+          {
+              number++;
+          }
+      };
+      thread.start();
+      System.out.println(number);
+      number++;
+      System.out.println(number);
+
+    }
+
+}
+```
+
+- A: Program doesn't compile
+- B: `0` and `1`
+- C: `1` and `2`
+- D: `0` and `2`
+- E: Values can be arbitrary
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: E  
+
+Java is a multi-threaded programming language. In a multi-threaded program, multiple threads are executed concurrently (at the same time). The `main` method is a thread that all Java programs run.  
+The above given program is a simple implementation of multi-threaded programming. When multiple threads are executed in a program, they share the variable and we don't know which thread is going to execute first (unless specified by programming constraints). So, we are not sure what value will the variable `number` hold when the print statement is called. Such problems occured due to concurrency is known as concurrency problems. 
+Threads can be created by extending Thread class or by implementing Runnable interface. 
+
+
+
+</p>
+</details>
+---
+
 Influenced by [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
