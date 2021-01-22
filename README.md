@@ -543,6 +543,44 @@ Threads can be created by extending Thread class or by implementing Runnable int
 
 </p>
 </details>
+
+---
+
+14. How many times will the print statement be executed?
+
+```java
+public class ThreadsOperations{
+    
+    public static void main(String[] args) {
+
+      Thread thread = new Thread()
+      {
+          public void run()
+          {
+              System.out.println("Thread is executing..."); //This one
+          }
+      };
+      thread.start();
+      thread.start();
+    }
+
+}
+```
+- A: 0
+- B: 1
+- C: 2
+- D: Keeps executing unless told otherwise
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: B  
+
+**Threads** in java can only be started once. The program will throw an `IllegalThreadStateException` during runtime if we try to start a thread that has already been started. So, the print statement is only executed once. 
+
+</p>
+</details>
+
 ---
 
 Influenced by [Javascript Questions](https://github.com/lydiahallie/javascript-questions) repo by @lydiahallie
