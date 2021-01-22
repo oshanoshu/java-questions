@@ -419,7 +419,7 @@ Now, we can see that `printMethod()` in class C will not know which `printMethod
 ###### 11. What is the output?
 
 ```java
-public class questions {
+public class Modifiers {
 
     private int number = 5;
     
@@ -442,6 +442,56 @@ public class questions {
 
 Program doesn't compile with an error `Cannot make a static reference to the non-static field number`.
 You cannot make reference to the non-static member from the static method. Static members are the properties of class wheras non-static members are the properties of object. Each object has it's own copy of non-static members whereas every object shares the same static members. On the other hand, you can make reference to static members from non-static method.
+
+</p>
+</details>
+
+---
+
+###### 12. What is the output?
+
+```java
+public class Initializers {
+    private static int number;
+    
+    static {
+        number = 5;
+    }
+    
+    public static void main(String[] args) {
+        number++;
+        System.out.println(number);
+    }
+}
+```
+
+- A: Program doesn't compile
+- B: `5`
+- C: `6`
+- D: None of the above
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+*Static initializers* are the blocks of code written under `static` keyword. They are used to initialize the properties of classes (also called *Class Initializers*). They are executed first before any other code when the class is loaded, in the order they are declared.  
+If you do not write `static` keyword, then they are *Instance Initializers* or simply *Initializers* and can't be referenced from static methods. Code in the instance initializers are copied to each constructor by the Java compiler which helps in sharing common code between the constructors.
+
+```java
+public class Initializers {
+    private int number;
+    
+    //Initializer (instance)
+    {
+      number = 1;
+    }
+    
+    Initializers(){
+      System.out.prinln(number); //prints 1 whenever the constructor is called
+    }
+}
+```
 
 </p>
 </details>
