@@ -31,6 +31,7 @@ Feel free to contact me! <br />
 #### Answer: D  
 
 There are 8 primitive data types in Java: `byte`, `char`, `short`, `int`, `long`, `float`, `double`, `boolean`.  
+Primitive data types are stored in stack.
 Primitive data types are the simplest form of data types, and they can't be broken down into other simpler forms. In Java, `String` is an object.
 
 </p>
